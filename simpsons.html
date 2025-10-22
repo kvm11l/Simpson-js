@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            The simpsons
+        </title>
+        <style>
+            .avatar > div {
+                position: absolute;
+                height: 458px;
+                width: 178px;
+                
+            }
+
+            .ctrl{
+                position: absolute;
+                left: 200px;
+                padding-left: 0px;
+                /* li{
+                list-style-type: none;
+                } */
+            }
+
+            .ctrl > li{
+                list-style-type: none;
+                line-height: 200%;
+            }
+
+          
+
+
+        </style>
+
+        <script>
+
+            // window.onload= function() {                                                         // wszystkie zasosoby zostana zaladowane
+            //     document.getElementById("trousers").addEventListener("click", handleLayers);
+
+            // }
+
+
+            window.addEventListener("DOMContentLoaded", () => {
+
+                inputs=["trousers", "shirt", "glasses", "hair"];
+
+                // for(let i = 0; i<inputs.length; i++){
+                // document
+                // .getElementById(inputs[i])
+                // .addEventListener("click", handleLayers) 
+                // }
+
+                // inputs.forEach(el => {
+                //     console.log(el)
+                // })
+
+
+                // ["trousers", "shirt", "glasses", "hair"].forEach(el => {
+                //     console.log(el)
+                // })
+
+                for(const el of inputs){
+                    // console.log(el)
+                    document
+                    .getElementById(el)
+                    .addEventListener("click", handleLayers)
+                }
+
+                // document
+                // .getElementById("trousers")
+                // .addEventListener("click", handleLayers)
+            });
+            
+            function handleLayers(){
+                // console.log(event.target.id);
+
+                let el = document.getElementById(event.target.id + "-layer");                
+                el.style.display = (el.style.display != "none") ? "none" : "block";
+
+
+                // console.log(input.id)
+                // let el = document.getElementById("trousers_layer");
+                // console.log(el)
+                // if(el.style.display != "none")
+                //     el.style.display == "none";
+                // else
+                //     el.style.display == "block"
+                // console.log('@@@');
+
+
+                // el.style.display = (el.style.display != "none") ? "none" : "block"
+
+
+            }
+
+        </script>
+
+        <body>
+            <p>......KP..........</p>
+            <ul class="ctrl" onclick="">
+                <li><input type="checkbox" id="shirt"><label for="shirt"></label> koszulka</li>        
+                 <!-- po id shirt bylo onclick="handleLayers() przed korzystanie z addeventlistner"  -->
+                <li><input type="checkbox" id="trousers"><label for="trousers"></label> spodnie</li>
+                <li><input type="checkbox" id="hair"><label for="hair"></label> wlosy</li>
+                <li><input type="checkbox" id="glasses" ><label for="glasses"></label> okulary</li>
+            </ul>
+            <div class="avatar">
+                <div style="background-image: url(sim.png)"></div>
+                <div id="trousers-layer" style="background-image: url(trousers.png)"></div>
+                <div id="shirt-layer" style="background-image: url(shirt.png)"></div>
+                <div id="hair-layer" style="background-image: url(hair.png)"></div>
+                <div id="glasses-layer" style="background-image: url(glasses.png)"></div>
+            </div>
+
+            
+
+        </body>
+    </head>
+</html>
